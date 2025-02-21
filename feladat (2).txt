@@ -1,0 +1,86 @@
+Hogyan juss snüsszhöz a Gépészben 0.1
+Nem lesz nyertes vagy vesztes, hanem az fog nyerni, aki a legtöbb snüsszt szerzi a nap végén.
+
+Nyomj egy Enter-t a játék elkezdéséhez.
+NÉV
+
+Név, vagyok, és ki akarok próbálni egy kicsit, kellene szereznem pár snüsszt. Mit csináljak?
+
+Ebben a játékban a nyertes folyamatosan változik, mivel itt az nyer, aki a legtöbb snüsszt gyűjti a játékban.
+A JÁTÉK UTÁN ÍRD FEL IDE, HÁNY SNÜSSZT SZEREZTÉL ÖSSZESEN:
+
+2. Snüsszhöz kell jutnod, mert függő vagy. Mit csinálsz?
+
+a. Veszel
+b. Megpróbálsz kérni pár haverodtól
+c. Inventory megtekintése
+0. Kilépés
+Ha megpróbálsz kérni, akkor random kisorsolja, hány haverodtól kérhetsz, és az alapján 25%-os eséllyel kaphatsz.
+
+Nem ad:
+Barát 1: ÁÁÁÁ tesóm, bocsi, de nincs, tudod, adnám.
+Barát 2: Bocsi tesóm, de nincs, ha lesz, szólok.
+
+Ad:
+Barát 1: Persze, mennyi kell?
+
+a. 1 - 75%
+b. 2 - 50%
+c. 3 - 25%
+
+if == a
+Akkor kaptál 1 snüsszt, és bekerült az inventory-dba.
+
+Venni akarok snüsszt, és 250 Ft-ba kerül. Nézzük meg, mennyi pénzem van.
+Nyomj egy Enter-t a pénzed megtekintéséhez.
+
+Oda mész Harcsához, és megkérdezed, ki árul snüsszt a Gépészben.
+
+a. Harcsa: Szia bátyús, most sehol sincs, én is pangok.
+b. Harcsa: Szia bátya, menjünk, vegyünk!
+Te: Menjünk.
+
+...
+Harcsa elvezet egy random csávóhoz.
+Random csávó: Mennyi kell?
+Te: Válasz
+if nincs elég pénzed:
+Nincs annyi pénzem.
+
+if van elég pénzed:
+Kösz tesóm.
+
+És ez egy while true loop-ba megy. A végén írja ki, mennyi snüsszt gyűjtöttél.
+NE FELEJSD EL FELVINNI, HÁNY SNÜSSZT GYŰJTÖTTÉL!
+
+            Console.WriteLine(@"
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠖⠚⠉⠉⠉⢹⠉⠉⠉⠓⠒⠦⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣤⠞⠉⠀⣠⣤⣶⣾⣿⣿⣿⣿⣿⣿⣤⣶⣤⣄⣬⣷⣦⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡴⠋⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣯⣿⣅⠈⠳⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣴⡋⠀⢀⣴⣿⣿⣿⣿⣿⡟⣿⣿⢿⣿⣻⣿⣿⣿⣻⣿⣿⣿⣿⣿⣷⣄⠈⠳⡀⠀⠀⠀
+⠀⠀⢀⡾⠑⢱⣶⣿⣿⣿⣿⣿⣿⣿⣧⣿⣬⣷⣮⣿⣾⣿⣿⣼⣿⣿⣿⣿⣿⣿⣿⡷⠀⠹⡄⠀⠀
+⠀⠀⣾⣥⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣟⣻⣿⣷⣿⣏⡿⣿⣿⣿⣿⣿⣿⡄⠀⠹⡄⠀
+⠀⣸   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣬⣿⣿⣿⣿⣿⣿⣿⠀⠀⢹⠀
+⢀⣿  ⣿⣿⠟⠛⠉⠉⠛⣿⠋⢹⣿⣿⠋⠙⣿⠋⢛.⡙⠻⣿⣿⡿⠉⠛⢿⣿⣿⣿⡇⠀⠈⡇
+⠈⣿ ⣿⣿⡏⠀⢰⣿⣿⣿⣿⠀⢸⣿⣿⠀⠀⣿⠀⠘⠛⠁⠼⣿⡿⠁⣸⡆⠘⣿⣿⣿⣷⠀⠀⡇
+⠀⣷ ⣿⣿⣿⣀⠈⠛⠛⠛⣿⣄⠀⠛⠋⠀⣰⣿⠀⠸⡿⠇⢀⡿⠁⢠⣭⣥⡀⠘⣿⣿⣟⠀⠀⡇
+⠀⢿ ⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣶⣾⣿⣿⣿⣷⣾⣿⣿⣿⣶⣿⣿⣿⣿⣶⣿⣿⣿⠀⢰⠇
+⠀⠸  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⡼⠀
+⠀⠀⢹   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⡼⠁⠀
+⠀⠀⠀⠻   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⢀⡼⠁⠀⠀
+⠀⠀⠀⠀⠙⢿   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⠟⠁⣤⠞⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⢿   ⣿⣿⣶⣯⣿⣿⣟⣿⣻⣿⣿⣯⣷⡾⠟⠋⠁⢀⣤⠞⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣯⣬  ⣿⣿⣿⣿⣿⣿⠛⠉⠁⢀⣀⡤⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠿⠿⠿⠿⠿⠶⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+");
+
+
+
+
+
+
+
+
+
+
+
