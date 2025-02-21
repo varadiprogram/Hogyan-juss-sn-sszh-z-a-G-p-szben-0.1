@@ -1,4 +1,4 @@
-﻿using System;
++﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace ConsoleApp1
             Console.WriteLine("");
             Console.WriteLine("Ad meg a neved:");
             string nev = Console.ReadLine();
-            Console.WriteLine(nev + " vagyok, és ki akarok próbálni egy kicsit, kellene szereznem pár snüsszt. Mit csináljak?");
+            Console.WriteLine(nev + " vagyok, és szereznem kellene pár snüsszt. Mit csináljak?");
             Console.WriteLine("");
 
             int valasz;
